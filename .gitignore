@@ -1,0 +1,9 @@
+# subject
+kfs-4.pdf
+
+# build
+build/
+kfs.iso
+
+# editor
+.vscode/

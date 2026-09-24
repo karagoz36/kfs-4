@@ -1,4 +1,4 @@
-# KFS-2: NASM + C -> our own linker script -> multiboot ELF -> bootable ISO. Build: make && make run
+# KFS-4: NASM + C -> our own linker script -> multiboot ELF -> bootable ISO. Build: make && make run
 
 NAME      := kernel.bin
 ISO       := kfs.iso
@@ -12,11 +12,20 @@ LD := ld
 
 # Sources
 ASM_SRCS := boot/boot.asm \
-            boot/gdt_flush.asm
+            boot/gdt_flush.asm \
+            boot/isr.asm \
+            boot/halt.asm
 C_SRCS   := kernel/main.c \
             kernel/console.c \
             kernel/printk.c \
             kernel/gdt.c \
+            kernel/idt.c \
+            kernel/isr.c \
+            kernel/pic.c \
+            kernel/timer.c \
+            kernel/signal.c \
+            kernel/panic.c \
+            kernel/syscall.c \
             kernel/stack.c \
             kernel/shell.c \
             drivers/vga.c \
